@@ -1,4 +1,4 @@
-##Cool Blog created with React
+## Cool Blog created with React
 
 ## Available Scripts
 
