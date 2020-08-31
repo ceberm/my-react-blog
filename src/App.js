@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState }  from 'react';
 import Navigation from './components/navigation'
 import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom'
 import PageRenderer from './page-renderer'
@@ -8,11 +8,12 @@ function App() {
     firstName: 'Tobias',
     lastName: 'Funke'
   }
+  const [menuActive, setMenuActive] = useState(false)
   return (
     <Router>
       <div className="App">
           <Navigation user={user}/>
-          <Switch>
+          <Switch onMouseEnter={() => setMenuActive(!menuActive)} onClick={() => setMenuActive(!menuActive)}>
             <Route path="/:page" component={PageRenderer} />
             <Route path="/" render={() => <Redirect to="/home" />} />
             <Route component={() => 404} />
