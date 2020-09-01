@@ -22,6 +22,13 @@
     .ant-avatar{
       background: $background;
       border: 1px solid $border;
+      -webkit-transition: transform 2s; /* Chrome, Safari, Opera */
+      transition: transform 1.8s ease-out;
+    }
+    .ant-avatar:hover{
+      -ms-transform: rotate(360deg); /* IE 9 */
+      -webkit-transform: rotate(360deg); /* Chrome, Safari, Opera */
+      transform: rotate(360deg);
     }
     .menu-avatar-name{
       font-size: 13px;

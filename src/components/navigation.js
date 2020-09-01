@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { Avatar } from 'antd'
 
@@ -18,16 +18,11 @@ const navLinks = [
   {
     title: 'Login',
     path: '/login'
-  },
+  }
 ]
 
 export default function Navigation ({user}) {
   const [menuActive, setMenuActive] = useState(false)
-
-
-  useEffect(() => {
-    console.log("Effect")
-  },[menuActive])
 
 
   return (
@@ -43,10 +38,10 @@ export default function Navigation ({user}) {
           </li>
         ))}
       </ul>
-      <span className="menu-avatar-container">
+      <Link to='/settings' onClick={() => setMenuActive(false)} className="menu-avatar-container">
         <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" size={38} />
         <span className="menu-avatar-name">{`${user.firstName} ${user.lastName}`}</span>
-      </span>
+      </Link>
       </div>
       <i className="ionicons icon ion-ios-menu" onClick={() => setMenuActive(!menuActive)} />
 
